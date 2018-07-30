@@ -295,7 +295,7 @@ mqtt_client_t *mqtt_init_client(mqtt_client_config_t *config)
 	result = 0;
 
 done:
-	if (result != 0) {
+	if (result != 0 && mqtt_client) {
 		destroy_mqtt_client(mqtt_client);
 		mqtt_client = NULL;
 	}
